@@ -1,3 +1,5 @@
+package event;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +9,6 @@ public class EventBus {
     private static final Map<String, List<EventListener>> events = new HashMap<>();
 
     public static void subscribe(String event, EventListener listener) {
-        System.out.println(listener + " subscribed to " + event);
         events.get(event).add(listener);
     }
 

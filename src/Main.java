@@ -1,3 +1,8 @@
+import container.Match;
+import container.Team;
+import entity.Coach;
+import entity.Player;
+import entity.Referee;
 import role.*;
 
 import java.util.Arrays;
@@ -6,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Coach localCoach = new Coach();
+        /*Coach localCoach = new Coach();
         Player lGoalkeeper = new Player(new Goalkeeper(new BaseRole()));
         Player lPlayer1 = new Player(new Defense(new Central(new Left(new BaseRole()))));
         Player lPlayer2 = new Player(new Defense(new Central(new Right(new BaseRole()))));
@@ -40,7 +45,9 @@ public class Main {
 
         Referee ref1 = new Referee();
         Referee ref2 = new Referee();
-        Match match = new Match(local, visitor, ref1, ref2);
+        Match match = new Match(local, visitor, ref1, ref2);*/
+
+        Match match = new TextMatchLoader().load();
 
         printMenu();
         selectOptions(match);
@@ -71,8 +78,8 @@ public class Main {
     }
 
     private static Team selectTeamFromMatch(Match match) {
-        System.out.println("[0] " + match.localTeam());
-        System.out.println("[1] " + match.visitorTeam());
+        System.out.println("[0] Local:   " + match.localTeam());
+        System.out.println("[1] Visitant: " + match.visitorTeam());
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt() == 0 ? match.localTeam() : match.visitorTeam();
     }
