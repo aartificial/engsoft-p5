@@ -4,7 +4,7 @@ import role.Role;
 
 public class Player {
 
-    private final Role role;
+    private Role role;
 
     public Player(Role role) {
         this.role = role;
@@ -21,5 +21,9 @@ public class Player {
 
     public void listenBench(String message) {
 
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

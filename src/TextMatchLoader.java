@@ -5,10 +5,8 @@ import entity.Player;
 import entity.Referee;
 import role.*;
 
-import javax.rmi.ssl.SslRMIClientSocketFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -64,23 +62,19 @@ public class TextMatchLoader implements MatchLoader {
     private Player createPlayer(String descriptor) throws Exception {
         Role role;
         switch(descriptor) {
-            case "goalkeeper": role = new Goalkeeper(new BaseRole()); break;
-            case "central": role = new Central(new BaseRole()); break;
-            case "lateral": role = new Lateral(new BaseRole());break;
-            case "attack": role = new Attack(new BaseRole());break;
-            case "pivot": role = new Pivot(new BaseRole());break;
-            case "left": role = new Left(new BaseRole());break;
-            case "right:": role = new Right(new BaseRole());break;
-            case "central left": role = new Central(new Left(new BaseRole()));break;
-            case "central right": role = new Central(new Right(new BaseRole()));break;
-            case "central attack": role = new Central(new Attack(new BaseRole()));break;
-            case "lateral left": role = new Lateral(new Left(new BaseRole()));break;
-            case "lateral right": role = new Lateral(new Right(new BaseRole()));break;
-            case "lateral attack": role = new Lateral(new Attack(new BaseRole()));break;
-            case "central left attack": role = new Central(new Left(new Attack(new BaseRole())));break;
-            case "central right attack": role = new Central(new Right(new Attack(new BaseRole())));break;
-            case "lateral left attack": role = new Lateral(new Left(new Attack(new BaseRole())));break;
-            case "lateral right attack": role = new Lateral(new Right(new Attack(new BaseRole())));break;
+            case "defensa extrem esquerra": role = new Defense(new Extreme(new Left(new BaseRole()))); break;
+            case "defensa extrem dret": role = new Defense(new Extreme(new Right(new BaseRole()))); break;
+            case "defensa lateral esquerra": role = new Defense(new Lateral(new Left(new BaseRole()))); break;
+            case "defensa lateral dret": role = new Defense(new Lateral(new Right(new BaseRole()))); break;
+            case "defensa central esquerra": role = new Defense(new Central(new Left(new BaseRole()))); break;
+            case "defensa central dret": role = new Defense(new Central(new Right(new BaseRole()))); break;
+            case "atac extrem esquerra": role = new Attack(new Extreme(new Left(new BaseRole()))); break;
+            case "atac extrem dret": role = new Attack(new Extreme(new Right(new BaseRole()))); break;
+            case "atac lateral esquerra": role = new Attack(new Lateral(new Left(new BaseRole()))); break;
+            case "atac lateral dret": role = new Attack(new Lateral(new Right(new BaseRole()))); break;
+            case "atac central": role = new Attack(new Central(new BaseRole())); break;
+            case "atac pivot": role = new Attack(new Pivot(new BaseRole())); break;
+            case "porter": role = new Goalkeeper(new BaseRole()); break;
             default: throw new Exception("Bad input while creating player with role: [" + descriptor + "]");
 
         }

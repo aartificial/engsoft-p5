@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f764af57-857c-403c-85d6-7978ba91f149" name="Changes" comment="Notification Working">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MatchLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextMatchLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/match_setup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/role/Pivot.java" afterDir="false" />
+    <list default="true" id="f764af57-857c-403c-85d6-7978ba91f149" name="Changes" comment="Main Cleanup">
+      <change afterPath="$PROJECT_DIR$/src/role/Extreme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Coach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/EventBus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/EventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Referee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Referee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextMatchLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextMatchLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Coach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/EventBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/match_setup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/match_setup.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="role" />
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/loader" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +91,8 @@
       <workItem from="1672839794828" duration="85000" />
       <workItem from="1672839884655" duration="1607000" />
       <workItem from="1673470184156" duration="15000" />
-      <workItem from="1673533230343" duration="9969000" />
+      <workItem from="1673533230343" duration="16706000" />
+      <workItem from="1673611176464" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Working">
       <created>1673540570631</created>
@@ -102,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673540570631</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added TextMatchLoader to load matches with a text file">
+      <created>1673543267321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673543267321</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Main Cleanup">
+      <created>1673543446241</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673543446241</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,20 +123,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Notification Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notification Working" />
+    <MESSAGE value="Added TextMatchLoader to load matches with a text file" />
+    <MESSAGE value="Main Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="4" />
+          <line>88</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/event/EventBus.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

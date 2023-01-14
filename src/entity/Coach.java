@@ -1,5 +1,6 @@
 package entity;
 
+import container.Team;
 import event.EventBus;
 
 public class Coach {
@@ -10,5 +11,9 @@ public class Coach {
     }
     public void notifyLineup(String message) {
         EventBus.notify(this + "listenLineup", message);
+    }
+
+    public void swapPlayers(Team team, Player lineupPlayer, Player benchPlayer) {
+
     }
 }

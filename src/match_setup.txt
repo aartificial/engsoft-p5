@@ -1,24 +1,24 @@
 5 6
-goalkeeper
-central left attack
-central right attack
-lateral left attack
-lateral right attack
-goalkeeper
-central left attack
-central left attack
-lateral right attack
-lateral left attack
-central right attack
+porter
+defensa extrem esquerra
+defensa lateral esquerra
+defensa central esquerra
+defensa central dret
+porter
+defensa central esquerra
+defensa lateral esquerra
+defensa extrem dret
+defensa lateral esquerra
+defensa central esquerra
 5 6
-goalkeeper
-central left attack
-central right attack
-lateral left attack
-lateral right attack
-goalkeeper
-central left attack
-central left attack
-lateral right attack
-lateral left attack
-central right attack
+porter
+defensa extrem esquerra
+defensa lateral esquerra
+defensa central esquerra
+defensa central dret
+porter
+defensa central esquerra
+defensa lateral esquerra
+defensa extrem dret
+defensa lateral esquerra
+defensa central esquerra
