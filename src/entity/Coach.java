@@ -12,8 +12,4 @@ public class Coach {
     public void notifyLineup(String message) {
         EventBus.notify(this + "listenLineup", message);
     }
-
-    public void swapPlayers(Team team, Player lineupPlayer, Player benchPlayer) {
-
-    }
 }

@@ -3,23 +3,26 @@ package container;
 import entity.Coach;
 import entity.Player;
 import event.EventBus;
+import role.Attack;
+import role.Defense;
 import role.Goalkeeper;
 import role.Role;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class Team {
-    private final int MAX_LINEUP_SIZE = 6;
+    private int MAX_LINEUP_SIZE = 6;
     private final int MAX_BENCH_SIZE = 6;
     private Coach coach;
     private List<Player> lineup = new ArrayList<>();
     private List<Player> bench = new ArrayList<>();
+    private boolean defense;
 
-    public Team(Coach coach, List<Player> lineup, List<Player> bench) {
+    public Team(Coach coach, List<Player> lineup, List<Player> bench, boolean defense) {
         this.coach = coach;
+        this.defense = defense;
         addPlayersToTeam(lineup, bench);
     }
 
@@ -45,7 +48,7 @@ public class Team {
         }
     }
 
-    private void removePlayerFromBench(Player player) {
+    public void removePlayerFromBench(Player player) {
         bench.remove(player);
         EventBus.unsubscribe(coach + "listenBench", player.toString());
     }
@@ -56,9 +59,20 @@ public class Team {
              playerList) {
             if (lineup.size() >= MAX_LINEUP_SIZE) break;
 
+            if (player.role() instanceof Defense && !defense) {
+                EventBus.unsubscribe(coach + "listenTeam", player.toString());
+                System.out.println("No es pot afegir un jugador a la pista amb rol defensiu quan l'equip esta atacant.");
+                continue;
+            } else if (player.role() instanceof Attack && defense) {
+                EventBus.unsubscribe(coach + "listenTeam", player.toString());
+                System.out.println("No es pot afegir un jugador a la pista amb rol d'atac quan l'equip esta defensant.");
+                continue;
+            }
+
             if (player.role() instanceof Goalkeeper) {
                 if (goalkeeperCheck) {
                     EventBus.unsubscribe(coach + "listenTeam", player.toString());
+                    System.out.println("No es poden afegir dos porters a la pista en el mateix equip.");
                     continue;
                 }
                 goalkeeperCheck = true;
@@ -68,7 +82,7 @@ public class Team {
         }
     }
 
-    private void removePlayerFromLineup(Player player) {
+    public void removePlayerFromLineup(Player player) {
         lineup.remove(player);
         EventBus.unsubscribe(coach + "listenLineup", player.toString());
     }
@@ -85,10 +99,10 @@ public class Team {
         return bench;
     }
 
-    public void swapPlayers(Player lineupPlayer, Player benchPlayer) {
+    public void swapPlayers(Player lineupPlayer, Player benchPlayer, Role role) {
         removePlayerFromLineup(lineupPlayer);
         removePlayerFromBench(benchPlayer);
-        swapPlayerRoles(lineupPlayer, benchPlayer);
+        benchPlayer.setRole(role);
         addPlayerToBench(lineupPlayer);
         addPlayerToLineup(benchPlayer);
 
@@ -104,9 +118,10 @@ public class Team {
         EventBus.subscribe(coach + "listenBench", player.toString(), player::listenBench);
     }
 
-    private void swapPlayerRoles(Player p1, Player p2) {
-        Role p1Role = p1.role();
-        p1.setRole(p2.role());
-        p2.setRole(p1Role);
+    public void increaseLineupSize(int diff) {
+        if (diff > 1 || diff < -1) {
+            System.out.println("Mida de la pista ha canviat des de " + MAX_LINEUP_SIZE + " a " + MAX_LINEUP_SIZE + diff);
+            MAX_LINEUP_SIZE += diff;
+        }
     }
 }

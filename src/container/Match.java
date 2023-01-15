@@ -2,6 +2,9 @@ package container;
 
 import entity.Referee;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Match {
     private final Team local;
     private final Team visitor;
@@ -20,5 +23,9 @@ public class Match {
 
     public Team visitorTeam() {
         return visitor;
+    }
+
+    public List<Referee> referees() {
+        return Arrays.asList(ref1, ref2);
     }
 }

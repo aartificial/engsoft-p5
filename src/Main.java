@@ -2,6 +2,10 @@ import container.Match;
 import container.Team;
 import entity.Coach;
 import entity.Player;
+import entity.Referee;
+import penalties.Exclusion;
+import role.Goalkeeper;
+import role.Role;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,34 +19,53 @@ public class Main {
     }
 
     private static void selectOptions(Match match) {
-
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
             printMenu();
             int option = scanner.nextInt() ;
             switch (option) {
-                case 0: coachNotifyPlayers(match); break;
-                //case 1: refereeExcludePlayer(); break;
-                case 2: coachSwapPlayers(match); break;
-                default: exit = true;
+                case 1: coachNotifyPlayers(match); break;
+                case 2: refereeExcludePlayer(match); break;
+                case 3: coachSwapPlayers(match); break;
+                case 4: exit = true; break;
+                default: break;
             }
         }
     }
 
-    private static void coachSwapPlayers(Match match) {
+    private static void refereeExcludePlayer(Match match) {
         Team team = selectTeamFromMatch(match);
-        Player lineupPlayer = selectPlayerFromList(team.lineup());
-        Player benchPlayer = selectPlayerFromList(team.bench());
-        team.swapPlayers(lineupPlayer, benchPlayer);
+        Player playerToExclude = selectElementFromList(team.lineup());
+        Referee referee = selectElementFromList(match.referees());
+        referee.applySanction(team, playerToExclude, new Exclusion());
     }
 
-    private static Player selectPlayerFromList(List<Player> list) {
+    private static void coachSwapPlayers(Match match) {
+        Team team = selectTeamFromMatch(match);
+        Player lineupPlayer = selectElementFromList(team.lineup());
+        Player benchPlayer = selectElementFromList(team.bench());
+        System.out.println("Introdueix un rol:");
+        Scanner scanner = new Scanner(System.in);
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        String roleDescription = scanner.nextLine();
+
+        Role newRole = RoleSelector.createRole(roleDescription);
+        if (!(lineupPlayer.role() instanceof Goalkeeper) && newRole instanceof Goalkeeper) {
+            System.out.println("No es pot tenir dos porters a la pista del mateix equip.");
+            return;
+        }
+
+        team.swapPlayers(lineupPlayer, benchPlayer, newRole);
+        System.out.println("Jugador " + lineupPlayer + " s'ha mogut a la banqueta.");
+        System.out.println("Jugador " + benchPlayer + " s'ha mogut a la pista amb el nou rol " + benchPlayer.role());
+    }
+
+    private static <T> T selectElementFromList(List<T> list) {
         int selection = Integer.MAX_VALUE;
         while (selection >= list.size()) {
             for (int i = 0; i < list.size(); i++)
                 System.out.println("[" + i + "] " + list.get(i));
-
             Scanner scanner = new Scanner(System.in);
             selection = scanner.nextInt();
         }
