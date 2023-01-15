@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        MatchLoader loader = new TextMatchLoader();
-        Match match = loader.load();
+        var loader = new TextMatchLoader();
+        var match = loader.load();
         selectOptions(match);
     }
 
     private static void selectOptions(Match match) {
-        Scanner scanner = new Scanner(System.in);
+        var scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
             printMenu();
@@ -25,31 +25,31 @@ public class Main {
     }
 
     private static void refereeExcludePlayer(Match match, Scanner scanner) {
-        Team team = selectTeamFromMatch(match, scanner);
+        var team = selectTeamFromMatch(match, scanner);
 
         if (team.lineup().isEmpty()) {
             System.out.println("No queda cap jugador a la pista.");
             return;
         }
 
-        Player playerToExclude = selectElementFromList(team.lineup(), scanner);
-        Referee referee = selectElementFromList(match.referees(), scanner);
+        var playerToExclude = selectElementFromList(team.lineup(), scanner);
+        var referee = selectElementFromList(match.referees(), scanner);
         if (playerToExclude != null && referee != null)
             referee.applySanction(team, playerToExclude, new Exclusion());
     }
 
     private static void coachSwapPlayers(Match match, Scanner scanner) {
-        Team team = selectTeamFromMatch(match, scanner);
+        var team = selectTeamFromMatch(match, scanner);
         System.out.println("Escull un jugador de la pista:");
-        Player lineupPlayer = selectElementFromList(team.lineup(), scanner);
+        var lineupPlayer = selectElementFromList(team.lineup(), scanner);
         System.out.println("Escull un jugador de la banqueta:");
-        Player benchPlayer = selectElementFromList(team.bench(), scanner);
+        var benchPlayer = selectElementFromList(team.bench(), scanner);
         System.out.println("Introdueix un rol:");
         scanner.nextLine();
         String mode = scanner.next();
         String function = scanner.next();
         String position = scanner.next();
-        Role newRole = RoleSelector.createRole(mode, function, position);
+        var newRole = RoleSelector.createRole(mode, function, position);
         if (lineupPlayer != null && !(lineupPlayer.role() instanceof Goalkeeper) && newRole instanceof Goalkeeper) {
             System.out.println("No es pot tenir dos porters a la pista del mateix equip.");
             return;
@@ -75,8 +75,8 @@ public class Main {
     }
 
     private static void coachNotifyPlayers(Match match, Scanner scanner) {
-        Team team = selectTeamFromMatch(match, scanner);
-        Coach coach = team.coach();
+        var team = selectTeamFromMatch(match, scanner);
+        var coach = team.coach();
         System.out.println("Introdueix el missatge:");
         scanner.nextLine();
         String message = scanner.nextLine();

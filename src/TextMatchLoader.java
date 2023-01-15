@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class TextMatchLoader implements MatchLoader {
     @Override
     public Match load() {
-        Coach localCoach = new Coach();
-        Coach visitorCoach = new Coach();
+        var localCoach = new Coach();
+        var visitorCoach = new Coach();
         List<Player> localLineup = new ArrayList<>();
         List<Player> localBench = new ArrayList<>();
         List<Player> visitorLineup = new ArrayList<>();
@@ -22,10 +22,10 @@ public class TextMatchLoader implements MatchLoader {
             throw new RuntimeException(e);
         }
 
-        Referee ref1 = new Referee();
-        Referee ref2 = new Referee();
-        Team local = readTeam(localCoach, localLineup, localBench, scanner);
-        Team visitor = readTeam(visitorCoach, visitorLineup, visitorBench, scanner);
+        var ref1 = new Referee();
+        var ref2 = new Referee();
+        var local = readTeam(localCoach, localLineup, localBench, scanner);
+        var visitor = readTeam(visitorCoach, visitorLineup, visitorBench, scanner);
 
         return new Match(local, visitor, ref1, ref2);
     }
