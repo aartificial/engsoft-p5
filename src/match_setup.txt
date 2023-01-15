@@ -1,24 +1,24 @@
 5 6
-porter
+defensa porter -
 defensa extrem esquerra
 defensa lateral esquerra
 defensa central esquerra
 defensa central dret
-porter
+defensa porter -
 defensa central esquerra
 defensa lateral esquerra
 defensa extrem dret
 defensa lateral esquerra
 defensa central esquerra
 5 6
-porter
-defensa extrem esquerra
-defensa lateral esquerra
-defensa central esquerra
-defensa central dret
-porter
-defensa central esquerra
-defensa lateral esquerra
-defensa extrem dret
-defensa lateral esquerra
-defensa central esquerra
+atac porter -
+atac extrem esquerra
+atac lateral esquerra
+atac central esquerra
+atac central dret
+atac porter -
+atac central esquerra
+atac lateral esquerra
+atac extrem dret
+atac lateral esquerra
+atac central esquerra

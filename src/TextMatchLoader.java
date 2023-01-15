@@ -36,15 +36,15 @@ public class TextMatchLoader implements MatchLoader {
         for (int i = 0; i < lineupSize; i++) {
             try {
                 scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-                lineup.add(createPlayer(scanner.nextLine()));
+                lineup.add(createPlayer(scanner.next(), scanner.next(), scanner.next()));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
         for (int i = 0; i < benchSize; i++) {
             try {
-                scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-                bench.add(createPlayer(scanner.nextLine()));
+                scanner.skip("(\r\n|[\n\r\u2028 \u2029\u0085])?");
+                bench.add(createPlayer(scanner.next(), scanner.next(), scanner.next()));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -52,7 +52,7 @@ public class TextMatchLoader implements MatchLoader {
         return new Team(coach, lineup, bench, true);
     }
 
-    private Player createPlayer(String descriptor) {
-        return new Player(RoleSelector.createRole(descriptor));
+    private Player createPlayer(String mode, String function, String position) {
+        return new Player(RoleSelector.createRole(mode, function, position));
     }
 }
