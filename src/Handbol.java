@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Handbol {
     public static void main(String[] args) {
         var loader = new TextMatchLoader();
         var match = loader.load();
