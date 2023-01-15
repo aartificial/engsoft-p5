@@ -25,11 +25,11 @@ public class Main {
             printMenu();
             int option = scanner.nextInt() ;
             switch (option) {
-                case 1: coachNotifyPlayers(match); break;
-                case 2: refereeExcludePlayer(match); break;
-                case 3: coachSwapPlayers(match); break;
-                case 4: exit = true; break;
-                default: break;
+                case 1 -> coachNotifyPlayers(match);
+                case 2 -> refereeExcludePlayer(match);
+                case 3 -> coachSwapPlayers(match);
+                case 0 -> exit = true;
+                default -> {}
             }
         }
     }
@@ -90,9 +90,9 @@ public class Main {
 
     private static void printMenu() {
         System.out.println("Selecciona cas d'us:");
-        System.out.println("[0] Entrenador notifica als jugadors de la pista.");
-        System.out.println("[1] Arbitre exclou al jugador X.");
-        System.out.println("[2] Entrenador ordena que el Jugador X substitueix al jugador Y.");
-        System.out.println("[*] Sortir.");
+        System.out.println("[1] Entrenador notifica als jugadors de la pista.");
+        System.out.println("[2] Arbitre exclou al jugador X.");
+        System.out.println("[3] Entrenador ordena que el Jugador X substitueix al jugador Y.");
+        System.out.println("[0] Sortir.");
     }
 }
