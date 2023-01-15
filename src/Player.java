@@ -1,6 +1,3 @@
-package entity;
-
-import role.Role;
 
 public class Player {
 

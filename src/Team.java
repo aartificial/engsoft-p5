@@ -1,13 +1,3 @@
-package container;
-
-import entity.Coach;
-import entity.Player;
-import event.EventBus;
-import role.Attack;
-import role.Defense;
-import role.Goalkeeper;
-import role.Role;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

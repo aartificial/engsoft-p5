@@ -1,5 +1,3 @@
-package role;
-
 public class BaseRole implements Role {
 
     @Override

@@ -1,8 +1,3 @@
-package penalties;
-
-import container.Team;
-import entity.Player;
-
 public class Exclusion implements Sanction {
     private float duration = 2;
     @Override

@@ -1,7 +1,5 @@
-package role;
-
-public class Goalkeeper extends RoleDecorator {
-    public Goalkeeper(Role role) {
+public class Pivot extends RoleDecorator {
+    public Pivot(Role role) {
         super(role);
     }
 
@@ -11,6 +9,6 @@ public class Goalkeeper extends RoleDecorator {
 
     @Override
     protected String addFunction() {
-        return " and Goalkeeper";
+        return " and Pivot";
     }
 }

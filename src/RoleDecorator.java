@@ -1,5 +1,3 @@
-package role;
-
 public abstract class RoleDecorator implements Role {
     private Role role;
 

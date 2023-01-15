@@ -1,10 +1,3 @@
-import container.Match;
-import container.Team;
-import entity.Coach;
-import entity.Player;
-import entity.Referee;
-import role.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

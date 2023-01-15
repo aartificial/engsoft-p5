@@ -1,5 +1,3 @@
-package role;
-
 public class Defense extends RoleDecorator {
     public Defense(Role role) {
         super(role);

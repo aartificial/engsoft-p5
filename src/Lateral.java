@@ -1,7 +1,5 @@
-package role;
-
-public class Attack extends RoleDecorator {
-    public Attack(Role role) {
+public class Lateral extends RoleDecorator {
+    public Lateral(Role role) {
         super(role);
     }
 
@@ -11,6 +9,6 @@ public class Attack extends RoleDecorator {
 
     @Override
     protected String addFunction() {
-        return " and Attack";
+        return " and Lateral";
     }
 }

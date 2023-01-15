@@ -1,7 +1,5 @@
-package role;
-
-public class Right extends RoleDecorator {
-    public Right(Role role) {
+public class Extreme extends RoleDecorator {
+    public Extreme(Role role) {
         super(role);
     }
 
@@ -11,6 +9,6 @@ public class Right extends RoleDecorator {
 
     @Override
     protected String addFunction() {
-        return " and Right";
+        return " and Extreme";
     }
 }

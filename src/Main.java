@@ -1,12 +1,3 @@
-import container.Match;
-import container.Team;
-import entity.Coach;
-import entity.Player;
-import entity.Referee;
-import penalties.Exclusion;
-import role.Goalkeeper;
-import role.Role;
-
 import java.util.List;
 import java.util.Scanner;
 

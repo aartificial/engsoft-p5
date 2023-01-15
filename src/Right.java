@@ -1,7 +1,5 @@
-package role;
-
-public class Pivot extends RoleDecorator {
-    public Pivot(Role role) {
+public class Right extends RoleDecorator {
+    public Right(Role role) {
         super(role);
     }
 
@@ -11,6 +9,6 @@ public class Pivot extends RoleDecorator {
 
     @Override
     protected String addFunction() {
-        return " and Pivot";
+        return " and Right";
     }
 }

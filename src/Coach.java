@@ -1,8 +1,3 @@
-package entity;
-
-import container.Team;
-import event.EventBus;
-
 public class Coach {
     public Coach() {
         EventBus.create(this + "listenTeam");

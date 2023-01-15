@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f764af57-857c-403c-85d6-7978ba91f149" name="Changes" comment="Main Cleanup">
-      <change afterPath="$PROJECT_DIR$/src/role/Extreme.java" afterDir="false" />
+    <list default="true" id="f764af57-857c-403c-85d6-7978ba91f149" name="Changes" comment="Selection starts at 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextMatchLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextMatchLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Coach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/EventBus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/match_setup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/match_setup.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lineup_notification" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,6 +85,8 @@
       <workItem from="1673470184156" duration="15000" />
       <workItem from="1673533230343" duration="16706000" />
       <workItem from="1673611176464" duration="655000" />
+      <workItem from="1673723857322" duration="252000" />
+      <workItem from="1673792908684" duration="5126000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Working">
       <created>1673540570631</created>
@@ -115,45 +109,65 @@
       <option name="project" value="LOCAL" />
       <updated>1673543446241</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Bugfixing">
+      <created>1673723891439</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673723891439</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Exclusion">
+      <created>1673796798789</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673796798789</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Selection starts at 1">
+      <created>1673797029059</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673797029059</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Notification Working" />
     <MESSAGE value="Added TextMatchLoader to load matches with a text file" />
     <MESSAGE value="Main Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Cleanup" />
+    <MESSAGE value="Bugfixing" />
+    <MESSAGE value="Added Exclusion" />
+    <MESSAGE value="Selection starts at 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Selection starts at 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/EventBus.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/container/Team.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/Team.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,7 +1,5 @@
-package role;
-
-public class Extreme extends RoleDecorator {
-    public Extreme(Role role) {
+public class Central extends RoleDecorator {
+    public Central(Role role) {
         super(role);
     }
 
@@ -11,6 +9,7 @@ public class Extreme extends RoleDecorator {
 
     @Override
     protected String addFunction() {
-        return " and Extreme";
+        return " and Central";
     }
 }
+

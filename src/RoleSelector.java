@@ -1,5 +1,3 @@
-import role.*;
-
 public class RoleSelector {
     public static Role createRole(String roleDescription) {
         Role role;
